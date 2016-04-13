@@ -18,7 +18,7 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/ptweir/ThorViewer">View on GitHub</a>
 
-          <h1 id="project_title">ThorViewer</h1>
+          <h1 id="project_title">Thorviewer</h1>
           <h2 id="project_tagline">A simple GUI for viewing images and analog data acquired using ThorImage and ThorSync software</h2>
 
             <section id="downloads">
@@ -33,14 +33,14 @@
       <section id="main_content" class="inner">
         <h3>
 <a id="purpose" class="anchor" href="#purpose" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Purpose</h3>
-<p>This is a very low-tech GUI for viewing data collected used ThorLabs 2-photon microscopes. After collecting imaging data with ThorImage and analog (e.g. electrophysiological) data with ThorSync, it is convenient to be able to quickly look at the signals. This script aims to ease this type of quick inspection of data. It does not replace more careful analysis and figure creation.</p>
+
 <h3>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
-<p>ThorViewer relies overwhelmingly on the excellent <a href="http://www.pyqtgraph.org/" target="_blank">pyqtgraph</a> library. First download pyqtgraph from that website. Then download this <a href="" target="_blank">file</a>, and put it in the pyqtgraph directory. That's it!</p>
+
 <h3>
 <a id="operation" class="anchor" href="#operation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Operation</h3>
 
-<p>At a Python prompt, navigate to the pyqtgraph directory, type <code>run view_thor_data.py</code>, and a new viewer window should open.</p>
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
