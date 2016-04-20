@@ -2,6 +2,7 @@
 # and DataSlicing.py example in pyqtgraph
 
 #########notes:
+# TODO: I think index is off because frame data is zero-based, but frame counter is 1-based!
 # TODO: updateROI sync in both windows
 # 2016/03/28 now prompts to move (and rename) files from ThorSync
 
