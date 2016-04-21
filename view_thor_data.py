@@ -74,7 +74,8 @@ class Main(QtGui.QMainWindow):
         self.p1 = pg.PlotWidget()
         self.p1.setMaximumHeight(150)
         self.layout.addWidget(self.p1, 2, 0, 1, 10)
-
+        self.layout.setContentsMargins(0., 10., 0., 10.)
+        
         # Initialize a statusbar for the window
         self.statusbar = self.statusBar()
 
@@ -111,16 +112,7 @@ class Main(QtGui.QMainWindow):
                 self.lines[keyInd].setPen(keyInd, len(self.lines))
             else:
                 self.lines[keyInd].setPen(None)
-        """
-        if self.check0.isChecked():
-            self.lines[0].setPen(0, len(self.lines))
-        else:
-            self.lines[0].setPen(None)
-        if self.check1.isChecked():
-            self.lines[1].setPen(1, len(self.lines))
-        else:
-            self.lines[1].setPen(None)
-        """
+
     def convert_tifs(self):
         fileNames = os.listdir(self.inDirName)
         fileNames.sort()
@@ -257,7 +249,7 @@ class Main(QtGui.QMainWindow):
             self.imv1.roi.sigRegionChanged.connect(self.updateROI)
 
             self.imv1.setImage(data[:,:,:,:])
-            self.imv2.setImage(data[:,:,:,1]) #peter
+            self.imv2.setImage(data[:,:,:,1])
             self.imv1.ui.roiPlot.setXLink(self.p1)
             self.imv2.ui.roiPlot.setXLink(self.p1)
             
