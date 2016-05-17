@@ -49,4 +49,10 @@ def subpixel(a, plot=False):
     
     return optimalShift, aOut
 
-        
+def shift_stack(a, shift):
+    aOut = np.copy(a)
+    shiftVector = np.zeros(a.ndim, dtype='float')
+    shiftVector[1] = shift
+    aOut[1::2,...] = np.fft.ifftn(fourier_shift(np.fft.fftn(aOut[1::2,...]), shiftVector)).real
+    return aOut
+    
