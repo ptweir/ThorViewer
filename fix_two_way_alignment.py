@@ -35,6 +35,8 @@ def subpixel(a, plot=False):
     res = scipy.optimize.minimize(func, x0=[optIntShift], method='Nelder-Mead')
     if res['success']:
         optimalShift = res['x'][0]
+        aOut = np.copy(a)
+        aOut[1::2,...] = np.fft.ifftn(fourier_shift(np.fft.fftn(aOut[1::2,...]), [0, optimalShift])).real        
         
         if plot:
             upsample_factor=20
@@ -42,22 +44,9 @@ def subpixel(a, plot=False):
             corrs = np.zeros(shifts.shape, dtype='float')
             for i, shift in enumerate(shifts):
                 corrs[i] = func([shift])
+                plt.plot(optimalShift, corrs.max(), 'rx')
+                plt.plot(shifts, corrs, 'g.')
     
-    else:
-        upsample_factor=20
-        shifts = np.arange(optIntShift-1, optIntShift+1, 1./upsample_factor)
-        corrs = np.zeros(shifts.shape, dtype='float')
-        for i, shift in enumerate(shifts):
-            corrs[i] = (a[::2,...]*np.fft.ifftn(fourier_shift(np.fft.fftn(a[1::2,...]), [0, shift])).real).sum() + (a[2::2,...]*np.fft.ifftn(fourier_shift(np.fft.fftn(a[1:-1:2,...]), [0, shift])).real).sum()
-
-        optimalShift = shifts[np.argmax(corrs)]
-        
-    if plot:
-        plt.plot(optimalShift, corrs.max(), 'rx')
-        plt.plot(shifts, corrs, 'g.')
-    
-    aOut = np.copy(a)
-    aOut[1::2,...] = np.fft.ifftn(fourier_shift(np.fft.fftn(aOut[1::2,...]), [0, optimalShift])).real
     return optimalShift, aOut
 
         
