@@ -1,5 +1,6 @@
 import numpy as np
 from scipy.ndimage import fourier_shift
+import scipy.optimize
 
 def integer_pixel_shift(a, shift):
     aOut = np.copy(a)
@@ -41,10 +42,6 @@ def subpixel(a, plot=False):
             corrs = np.zeros(shifts.shape, dtype='float')
             for i, shift in enumerate(shifts):
                 corrs[i] = func([shift])
-            import matplotlib.pyplot as plt
-            plt.ion()
-            plt.plot(optimalShift, func([optimalShift]), 'rx')
-            plt.plot(shifts, corrs, 'g.')
     
     else:
         upsample_factor=20
@@ -55,11 +52,9 @@ def subpixel(a, plot=False):
 
         optimalShift = shifts[np.argmax(corrs)]
         
-        if plot:
-            import matplotlib.pyplot as plt
-            plt.ion()
-            plt.plot(optimalShift, corrs.max(), 'rx')
-            plt.plot(shifts, corrs, 'g.')
+    if plot:
+        plt.plot(optimalShift, corrs.max(), 'rx')
+        plt.plot(shifts, corrs, 'g.')
     
     aOut = np.copy(a)
     aOut[1::2,...] = np.fft.ifftn(fourier_shift(np.fft.fftn(aOut[1::2,...]), [0, optimalShift])).real
