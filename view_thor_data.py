@@ -178,7 +178,7 @@ class Main(QtGui.QMainWindow):
             self.setWindowTitle("Viewing "+self.inDirName)
             inFiles = os.listdir(self.inDirName)
 
-            inHdf5Files = [inFile for inFile in inFiles if inFile[-5:]=='.hdf5']
+            inHdf5Files = [inFile for inFile in inFiles if inFile=='t_series.hdf5']
             while len(inHdf5Files) < 1:
                 reply = QtGui.QMessageBox.question(self, 'No imaging file', "Unable to find converted imaging file, convert tifs?", QtGui.QMessageBox.Yes | QtGui.QMessageBox.No, QtGui.QMessageBox.Yes)
                 doConversion = (reply == QtGui.QMessageBox.Yes)
