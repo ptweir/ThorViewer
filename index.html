@@ -45,14 +45,14 @@
       <section id="main_content" class="inner">
         <h3>
 <a id="purpose" class="anchor" href="#purpose" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Purpose</h3>
-<p>This is a simple GUI for viewing data collected using ThorLabs 2-photon microscopes. After collecting imaging data with ThorImage and analog (e.g. electrophysiological) data with ThorSync, it is convenient to be able to quickly look at the signals. This script aims to ease this type of quick inspection of data. It does not replace more careful analysis and figure creation.</p>
+<p>ThorViewer is a simple GUI for viewing data collected using ThorLabs 2-photon microscopes. After collecting imaging data with <a href="https://www.thorlabs.de/newgrouppage9.cfm?objectgroup_id=7494&tabname=ThorImageLS" target="_blank">ThorImage</a> and analog (e.g. electrophysiological) data with ThorSync, it is convenient to be able to quickly look at the signals. This GUI aims to ease this type of quick inspection of data. It is not intended to replace more careful analysis and figure creation.</p>
 <h3>
 <a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
 <p>ThorViewer relies overwhelmingly on the excellent <a href="http://www.pyqtgraph.org/" target="_blank">pyqtgraph</a> library. First, download and unzip my slightly edited version of pyqtgraph <a href="https://github.com/ptweir/pyqtgraph/zipball/develop" >here</a>. Then download this <a href="https://github.com/ptweir/ThorViewer/zipball/master">project</a>, and unzip it into the pyqtgraph directory. That's it!</p>
 <h3>
 <a id="operation" class="anchor" href="#operation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Operation</h3>
 
-<p>At a command prompt, navigate to the pyqtgraph directory, type <code>python view_thor_data.py</code>, and a new viewer window should open. To open data from an experiment, click the "Open Data" icon (or File>Open File, or Ctrl+O) and navigate to the directory containing the .tiff files from ThorImage. This first time you open the .tiff files, it will save a .hdf5 called "t_series.hdf5" into the original data directory. It will also prompt you to navigate to the directory in which the ThorSync data is saved, which it will also copy to the data directory.</p>
+<p>At a command prompt, navigate to the pyqtgraph directory, enter <br /> <code>python view_thor_data.py</code> <br /> and a new viewer window should open. To open data from an experiment, click the "Open Data" icon (or File>Open File, or Ctrl+O) and navigate to the directory containing the .tiff files from ThorImage. The first time you open the .tiff files, it will save a .hdf5 called "t_series.hdf5" into the original data directory. It will also prompt you to navigate to the directory in which the ThorSync data is saved, which it will also copy to the data directory.</p>
 
 <h3>
 <a id="screenshots" class="anchor" href="#screenshots" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshots</h3>
